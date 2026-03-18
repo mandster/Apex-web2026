@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from "../image/Apex_logo_23.png";
 
 
 function Navi() {

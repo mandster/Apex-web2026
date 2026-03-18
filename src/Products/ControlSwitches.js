@@ -8,19 +8,19 @@ const ControlSwitches = () => {
         <div className="page-hero-grid">
           <div>
             <p className="section-kicker">L.T. Control Switches</p>
-            <h1 className="page-title">Heavy-duty switching with clear industrial purpose.</h1>
+            <h1 className="page-title">Low-voltage control switching for industrial duty.</h1>
           </div>
           <p className="page-summary">
-            Apex low-tension control switches are built for frequent operation,
-            dependable contact performance, and a range of motor-control functions.
+            Apex control switches are designed for frequent operation,
+            consistent contact performance, and motor-control applications.
           </p>
         </div>
       </section>
       <section className="page-section product-story-grid">
         <div className="story-copy">
           <p>
-            These switches are used for on-off control, reversing, change-over,
-            star-delta duty, and other low-voltage motor-control applications.
+            These switches support on-off control, reversing, change-over,
+            and star-delta functions in low-voltage motor-control circuits.
           </p>
           <ul className="editorial-list">
             <li>On-Off Switches</li>
@@ -36,14 +36,14 @@ const ControlSwitches = () => {
             <img src={control32.src || control32} alt="Apex L.T Control Switches 32 A" loading="lazy" className="variant-image" />
             <div>
               <h3>32 A</h3>
-              <p>Designed for essential low-voltage control applications with reliable mechanical performance.</p>
+              <p>Designed for standard low-voltage control applications with reliable mechanical performance.</p>
             </div>
           </article>
           <article className="variant-card-editorial">
             <img src={control63.src || control63} alt="Apex L.T Control Switches 63 A" loading="lazy" className="variant-image" />
             <div>
               <h3>63 A</h3>
-              <p>Higher-capacity control switching for more demanding duty cycles and heavier loads.</p>
+              <p>Higher-capacity switching for heavier loads and more demanding duty cycles.</p>
             </div>
           </article>
         </div>

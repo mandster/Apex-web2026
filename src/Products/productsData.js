@@ -9,14 +9,14 @@ const productsData = [
       name: 'Direct Online Starters',
       category: '1',
       image: dolClassicImage,
-      description: 'Apex Direct Online Starter (DOL Starter) is a type of motor starter that is commonly used to start high-power motors. Its primary function is to connect a motor directly to the power supply, bypassing any kind of soft-start or reduced-voltage starting mechanisms.',
+      description: 'A Direct-On-Line starter connects the motor directly to full line voltage. It is used where inrush current and starting torque are acceptable for the supply and driven load.',
     },
     {
         id: "MSD",
         name: 'Manual Star-Delta Starters',
         category: '1',
         image: msdImage,
-        description: 'Apex Manual Star-Delta Starter is a type of motor starter used to reduce the starting current and torque of an electric motor during its startup. This is achieved by initially connecting the motor in a star configuration and then switching to a delta configuration after a certain period. The transition from star to delta is manually controlled, typically using a switch.',
+        description: 'A manual star-delta starter reduces motor starting current by starting in star connection and then switching to delta. The transition is operator-controlled.',
       },
     // Add more products as needed
   ];

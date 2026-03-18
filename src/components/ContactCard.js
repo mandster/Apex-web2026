@@ -2,7 +2,6 @@
 const ContactCard = () => {
   return (
     <div className="footer-contact-card">
-      <h2>Contact Us</h2>
       <div className="address">
         <div>Apex Electricals</div>
         <div>Apex House E-18 Industrial Area</div>

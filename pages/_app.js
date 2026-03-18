@@ -6,6 +6,7 @@ import "../src/styles.css";
 import "../src/App.css";
 import "../src/components/Navbar.css";
 import "../src/components/Contact.css";
+import "../src/components/Footer.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "../src/components/Navbar";

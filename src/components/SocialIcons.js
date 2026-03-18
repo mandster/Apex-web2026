@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const SocialIcons = () => {
+const SocialIcons = ({ compact = false }) => {
+  const iconSize = compact ? "1x" : "2x";
+
   return (
     <div className="social-links-row">
       <a
@@ -10,10 +12,7 @@ const SocialIcons = () => {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <FontAwesomeIcon
-          icon={faFacebook}
-          size="2x"
-        />
+        <FontAwesomeIcon icon={faFacebook} size={iconSize} />
       </a>
       <a
         href="https://www.instagram.com/apex.electricals"
@@ -21,7 +20,7 @@ const SocialIcons = () => {
         rel="noopener noreferrer"
         className="social-link"
       >
-        <FontAwesomeIcon icon={faInstagram} size="2x" />
+        <FontAwesomeIcon icon={faInstagram} size={iconSize} />
       </a>
     </div>
   );

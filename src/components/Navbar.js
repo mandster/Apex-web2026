@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import logo from "../image/apex_logo1.jpeg";
+import logo from "../image/apex_logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,11 +39,14 @@ const Navbar = () => {
     setIsStartersOpen((prev) => !prev);
   };
 
+  const isHome = router.pathname === "/";
+
   return (
-    <nav className={`premium-navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`premium-navbar ${isHome ? "home-route" : "inner-route"} ${isScrolled ? 'scrolled' : ''}`}>
       <div className="premium-nav-inner">
         <Link href="/" className="brand-link" aria-label="Apex Electricals Home">
           <img src={logo.src || logo} alt="Apex Electricals" className="main-logo" />
+          <span className="brand-name">Apex Electricals</span>
         </Link>
 
         <button

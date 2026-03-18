@@ -1,42 +1,72 @@
-//import dnvLogo from "../image/dnv_logo.png";
 import Link from "next/link";
 import ContactCard from "./ContactCard";
 import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
   return (
-    <>
-      <div className="footer">
-        <div className="quick-links-column footer-brand-block">
-          <p className="section-kicker">Apex Electricals</p>
-          <h2>Electrical control products presented with more clarity.</h2>
-          <p className="footer-copy">
+    <footer>
+      
+      {/* MAIN GRID */}
+      <div className="footer-grid">
+        
+        {/* LEFT — BRAND */}
+        <div className="footer-brand">
+          <p className="footer-label">
+            Apex Electricals
+          </p>
+
+          <h2>
+            Industrial electrical control, engineered for performance.
+          </h2>
+
+          <p>
             Switchgear, motor control, contactors, panels, and supporting electrical equipment for industrial applications.
           </p>
         </div>
-        <div className="quick-links-column footer-links-block">
-          <h2>Explore</h2>
-          <Link className="no-decor" href="/Products">All Products</Link>
-          <Link className="no-decor" href="/Product/Starters">Motor Starters</Link>
-          <Link className="no-decor" href="/Product/ControlSwitches">L.T. Control Switches</Link>
-          <Link className="no-decor" href="/Product/SubmersiblePanels">Submersible Panels</Link>
-          <Link className="no-decor" href="/About">About</Link>
-          <Link className="no-decor" href="/Contact">Contact</Link>
-        </div>
-        <div className="follow-us-column footer-contact-block">
-          <ContactCard />
+
+        {/* MIDDLE — LINKS */}
+        <div className="footer-explore">
+          <div>
+            <p className="footer-section-title">
+              Explore
+            </p>
+
+            <div className="footer-links">
+              <Link href="/Products">All Products</Link>
+              <Link href="/Product/Starters">Motor Starters</Link>
+              <Link href="/Product/ControlSwitches">L.T. Control Switches</Link>
+              <Link href="/Product/SubmersiblePanels">Submersible Panels</Link>
+              <Link href="/About">About</Link>
+              <Link href="/Contact">Contact</Link>
+            </div>
+          </div>
         </div>
 
-        <div className="follow-us-column footer-social-block">
-          <h2>Visit us on</h2>
-          <SocialIcons />
+        {/* RIGHT — CONTACT */}
+        <div className="footer-contact">
+          <div>
+            <p className="footer-section-title">
+              Contact
+            </p>
+            <ContactCard />
+          </div>
 
+          <div>
+            <p className="footer-section-title">
+              Social
+            </p>
+            <div className="footer-social">
+              <SocialIcons />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="centered-text medium-text footer-bed">
-        Copyright @2026 Apex Electricals
+
+      {/* BOTTOM BAR */}
+      <div className="footer-bottom">
+        © 2026 Apex Electricals
       </div>
-    </>
+    </footer>
   );
 };
 

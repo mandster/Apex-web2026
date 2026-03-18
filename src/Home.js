@@ -1,41 +1,41 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Hero from "./components/Hero";
 import startersImage from "./image/starters.jpg";
 import controlSwitchesImage from "./image/controlswitches.jpg";
 import submersibleImage from "./image/submersiblepanels.jpg";
 import contactorsImage from "./image/contactors.jpg";
-import heroImage from "./image/allproducts.jpg";
 
 const trustStats = [
-  { label: "Years of Engineering", value: 50, suffix: "+" },
-  { label: "Products Delivered", value: 20000, suffix: "+" },
-  { label: "Industrial Customers", value: 1200, suffix: "+" },
-  { label: "States Served", value: 24, suffix: "" },
+  { label: "Years of Experience", value: 50, suffix: "+" },
+  { label: "Installations", value: 20000, suffix: "+" },
+  { label: "Industrial Clients", value: 1200, suffix: "+" },
+  { label: "Certifications", value: 12, suffix: "" },
 ];
 
 const productHighlights = [
   {
     id: "Starters",
     title: "Motor Starters",
-    description: "Precision switching and motor safety solutions for critical operations.",
+    description: "DOL, star-delta, and forward-reverse starters for low-voltage motor control.",
     image: startersImage,
   },
   {
     id: "ControlSwitches",
     title: "L.T. Control Switches",
-    description: "Heavy-duty control architecture designed for continuous industrial use.",
+    description: "Low-voltage control switches for panel and machine circuits.",
     image: controlSwitchesImage,
   },
   {
     id: "SubmersiblePanels",
     title: "Submersible Panels",
-    description: "Reliable panel systems for water management and pumping control.",
+    description: "Submersible pump panels with integrated control and protection.",
     image: submersibleImage,
   },
   {
     id: "Contactors",
     title: "Air Break Contactors",
-    description: "Robust contactor systems for safe and dependable electrical distribution.",
+    description: "Air-break contactors for frequent switching duty.",
     image: contactorsImage,
   },
 ];
@@ -43,22 +43,22 @@ const productHighlights = [
 const capabilities = [
   {
     title: "Design & Engineering",
-    text: "Application-focused product engineering aligned to modern industrial standards.",
+    text: "Application-focused design for industrial operating conditions.",
     icon: "01",
   },
   {
     title: "Precision Manufacturing",
-    text: "Tight process controls, consistent quality, and reliable production repeatability.",
+    text: "Controlled processes for repeatable quality and consistent output.",
     icon: "02",
   },
   {
     title: "Quality Validation",
-    text: "Rigorous checks for performance, electrical safety, and long service life.",
+    text: "Routine validation for performance, protection, and service life.",
     icon: "03",
   },
   {
     title: "Technical Support",
-    text: "Consultative support for product selection, deployment, and maintenance.",
+    text: "Technical guidance for selection, commissioning, and maintenance.",
     icon: "04",
   },
 ];
@@ -144,33 +144,7 @@ const Home = () => {
 
   return (
     <div className="home-premium">
-      <section className="hero-premium">
-        <div className="hero-content editorial-hero reveal is-visible">
-          <div className="hero-copy-block">
-            <p className="hero-eyebrow">Apex Electricals</p>
-            <h1>Electrical control systems with a quieter kind of confidence.</h1>
-          </div>
-          <div className="hero-side-block">
-            <p className="hero-subtitle">
-              Since 1975, Apex has built switchgear and control products for
-              engineers who value precision, consistency, and long-term field
-              reliability.
-            </p>
-            <div className="hero-actions">
-              <Link href="/Products" className="premium-btn primary-btn">
-                View Products
-              </Link>
-              <Link href="/About" className="premium-btn ghost-btn">
-                About Apex
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="hero-media reveal">
-        <img src={heroImage.src || heroImage} alt="Apex Electricals product portfolio" loading="eager" />
-      </section>
+      <Hero />
 
       <section className="trust-bar reveal" ref={statsRef}>
         {trustStats.map((stat, index) => (
@@ -187,7 +161,7 @@ const Home = () => {
       <section className="section-shell reveal">
         <div className="section-head">
           <p className="section-kicker">Portfolio</p>
-          <h2>A focused product range for critical electrical control.</h2>
+          <h2>A focused portfolio for industrial control and protection.</h2>
         </div>
         <div className="premium-grid products-grid">
           {productHighlights.map((item) => (
@@ -211,11 +185,10 @@ const Home = () => {
         <div className="editorial-split">
           <div className="section-head split-copy">
             <p className="section-kicker">Engineering</p>
-            <h2>Designed for serious applications, presented with clarity.</h2>
+            <h2>Engineered for critical duty. Specified with clarity.</h2>
             <p className="section-intro">
-              The flow is simpler, but the message is sharper: dependable
-              products, disciplined manufacturing, and support that understands
-              real installations.
+              Apex combines disciplined design, controlled manufacturing, and
+              technical support for real installations.
             </p>
           </div>
           <div className="capability-list">
@@ -247,16 +220,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="section-shell reveal cta-shell">
-        <div className="cta-panel">
-          <p className="section-kicker">Contact</p>
-          <h2>For OEMs, panel builders, EPCs, and industrial buyers.</h2>
-          <Link href="/Contact" className="premium-btn primary-btn">
-            Speak With Apex
-          </Link>
-        </div>
-      </section>
-    </div>
+      </div>
   );
 };
 

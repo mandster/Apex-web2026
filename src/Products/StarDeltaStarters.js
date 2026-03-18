@@ -8,11 +8,11 @@ const StarDeltaStarters = () => {
         <div className="page-hero-grid">
           <div>
             <p className="section-kicker">Star Delta Starters</p>
-            <h1 className="page-title">Reduced-current starting for larger motor duty.</h1>
+            <h1 className="page-title">Reduced-current starting for higher motor ratings.</h1>
           </div>
           <p className="page-summary">
-            Star-delta starters help reduce starting current and mechanical stress,
-            making them suitable for applications where direct starting is less desirable.
+            Star-delta starters reduce starting current and mechanical stress
+            where direct-on-line starting is not preferred.
           </p>
         </div>
       </section>
@@ -21,14 +21,14 @@ const StarDeltaStarters = () => {
               <img src={asd.src || asd} alt="Apex Manual Star Delta Motor Starter" loading="lazy" className="variant-image" />
           <div>
             <h3>Manual Star-Delta Starter</h3>
-            <p>Starts in star mode and transitions to delta manually after the required interval.</p>
+            <p>Starts in star and transitions to delta through manual operator control.</p>
           </div>
         </article>
         <article className="variant-card-editorial wide-variant-card">
               <img src={msd.src || msd} alt="Apex Automatic Star Delta Motor Starter" loading="lazy" className="variant-image" />
           <div>
             <h3>Automatic Star-Delta Starter</h3>
-            <p>Transitions from star to delta automatically through an adjustable timing relay for smoother operation.</p>
+            <p>Automatic star-to-delta transition using an adjustable timing relay.</p>
           </div>
         </article>
       </section>

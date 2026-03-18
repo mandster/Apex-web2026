@@ -12,28 +12,29 @@ const Contactors = () => {
         <div className="page-hero-grid">
           <div>
             <p className="section-kicker">Air Break Contactors</p>
-            <h1 className="page-title">Core switching components for repeated industrial duty.</h1>
+            <h1 className="page-title">Air-break contactors for repeated industrial switching duty.</h1>
           </div>
           <p className="page-summary">
-            Apex contactors are designed for motor control and power switching applications where
-            long electrical life, replaceability, and rugged operation are essential.
+            Apex contactors are designed for motor-control and power-switching
+            applications requiring long electrical life and field serviceability.
           </p>
         </div>
       </section>
       <section className="page-section editorial-columns">
         <article>
           <p>
-            Contactors make and break electrical connections in response to control signals.
-            They are fundamental to motor starters, panel assemblies, capacitor banks, and a broad range of load applications.
+            Contactors open and close power circuits in response to control
+            signals. They are fundamental to motor starters, panel assemblies,
+            capacitor banks, and other load-control systems.
           </p>
         </article>
         <article>
           <ul className="editorial-list">
             <li>High electrical and mechanical life</li>
-            <li>Noise-free and chatter-free operation</li>
-            <li>Heat-resistant outer body</li>
+            <li>Low-noise, low-chatter operation</li>
+            <li>Heat-resistant housing</li>
             <li>Protection from live parts</li>
-            <li>Easy replacement of coils and contacts</li>
+            <li>Replaceable coils and contacts</li>
           </ul>
         </article>
       </section>
@@ -45,14 +46,14 @@ const Contactors = () => {
           </div>
           <div className="catalog-body">
             <h3>COMMANDER Series</h3>
-            <p>Modular design with flexible auxiliary arrangements and easy field serviceability.</p>
+            <p>Modular design with flexible auxiliary configurations and easy field serviceability.</p>
           </div>
         </article>
         <article className="catalog-card static-card">
           <img src={contactor16.src || contactor16} alt="Apex contactor 16 A" loading="lazy" className="catalog-image" />
           <div className="catalog-body">
             <h3>Compact Build</h3>
-            <p>Efficient format for panel integration where footprint and access both matter.</p>
+            <p>Compact format for panel integration where footprint and service access both matter.</p>
           </div>
         </article>
         <article className="catalog-card static-card">
@@ -62,7 +63,7 @@ const Contactors = () => {
           </div>
           <div className="catalog-body">
             <h3>Expanded Range</h3>
-            <p>Multiple capacities to support different duty classes and installation requirements.</p>
+            <p>Multiple current ratings for different duty classes and installation requirements.</p>
           </div>
         </article>
       </section>

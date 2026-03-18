@@ -5,12 +5,12 @@ const About = () => {
         <div className="page-hero-grid">
           <div>
             <p className="section-kicker">About Apex</p>
-            <h1 className="page-title">Built in India. Positioned for a wider industrial world.</h1>
+            <h1 className="page-title">Manufactured in India. Trusted in industrial markets.</h1>
           </div>
           <p className="page-summary">
-            Apex Electricals has grown by focusing on essential things that last:
-            reliable products, disciplined checking, service-minded support, and
-            a practical understanding of how electrical equipment is used in the field.
+            Apex Electricals is built on four principles: reliable products,
+            controlled manufacturing, validated quality, and responsive
+            technical support.
           </p>
         </div>
       </section>
@@ -18,23 +18,23 @@ const About = () => {
       <section className="page-section editorial-columns">
         <article>
           <p>
-            Our story began in the 1970s, when demand for dependable motor
-            starters in India was rising quickly. Apex responded with products
-            that were accessible, robust, and built for real operating conditions.
+            Apex began in the 1970s when demand for dependable motor starters
+            increased across Indian industry. The company focused on robust
+            products built for real operating conditions.
           </p>
           <p>
-            Over time, that approach established Apex as a recognized switchgear
-            name with reach across sectors and regions. The business evolved, but
-            the mindset remained direct: engineer well, manufacture carefully,
-            and keep quality visible at every stage.
+            This approach established Apex as a trusted switchgear manufacturer
+            across industrial sectors. The operating model remains direct:
+            engineer with discipline, manufacture with control, and verify quality
+            at each stage.
           </p>
         </article>
         <article>
           <p>
-            Today, Apex continues to manufacture motor control and electrical
-            equipment with a balance of practical design, validation, and long-term
-            serviceability. The ambition is not only to serve the domestic market,
-            but to present the brand with the clarity and consistency expected of a global supplier.
+            Today, Apex manufactures motor-control and electrical equipment with
+            practical design, documented validation, and field serviceability.
+            The objective is clear: deliver domestic scale with global standards
+            in product consistency and technical communication.
           </p>
         </article>
       </section>
@@ -43,18 +43,18 @@ const About = () => {
         <div className="value-grid">
           <article>
             <span className="value-index">01</span>
-            <h3>Quality Discipline</h3>
-            <p>Every product is checked with a mindset shaped by decades of manufacturing experience.</p>
+            <h3>Quality Control</h3>
+            <p>Every product is verified against defined electrical and mechanical checks.</p>
           </article>
           <article>
             <span className="value-index">02</span>
-            <h3>Industrial Relevance</h3>
-            <p>Products are designed for real installations, not only for catalog specification sheets.</p>
+            <h3>Application Fit</h3>
+            <p>Products are engineered for installation realities, not only catalog claims.</p>
           </article>
           <article>
             <span className="value-index">03</span>
-            <h3>Progressive Thinking</h3>
-            <p>New products, better presentation, and wider market readiness are part of ongoing work.</p>
+            <h3>Continuous Improvement</h3>
+            <p>Design, process, and documentation are improved through ongoing review.</p>
           </article>
         </div>
       </section>
