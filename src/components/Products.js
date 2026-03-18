@@ -1,93 +1,90 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import slide1 from "../image/starters.jpg";
-import slide2 from "../image/controlswitches.jpg";
-import slide3 from "../image/submersiblepanels.jpg";
-import slide4 from "../image/contactors.jpg";
-import slide5 from "../image/allproducts.jpg";
-import slide0 from "../image/allproducts.jpg";
-import slide6 from "../image/allproducts.jpg";
-import "../styles.css"; // Import your styles if needed
+import Link from "next/link";
+import startersImage from "../image/starters.jpg";
+import controlSwitchesImage from "../image/controlswitches.jpg";
+import submersibleImage from "../image/submersiblepanels.jpg";
+import contactorsImage from "../image/contactors.jpg";
+import plugSocketsImage from "../image/plugsockets.jpg";
+import limitSwitchImage from "../image/panel accessories mcb.jpg";
+import accessoriesImage from "../image/accessories.jpg";
 
 const Products = () => {
   const products = [
-
     {
-      id: 0,
-      name: "Electric Motor Starters",
-      thumbnail: slide0,
-      description: "Switching and safety devices",
+      name: "Motor Starters",
+      image: startersImage,
+      route: "/Product/Starters",
+      description: "Direct online, star-delta, and reverse-forward configurations built for dependable motor control.",
     },
     {
-      id: 1,
       name: "L.T. Control Switches",
-      thumbnail: slide1,
-      description: "Heavy duty switching and controlling devices",
+      image: controlSwitchesImage,
+      route: "/Product/ControlSwitches",
+      description: "Heavy-duty low-tension switching solutions for industrial panels and equipment.",
     },
     {
-      id: 2,
       name: "Submersible Panels",
-      thumbnail: slide2,
-      description: "Device to control and protect submersible pumps",
+      image: submersibleImage,
+      route: "/Product/SubmersiblePanels",
+      description: "Pump protection and control panels engineered for field reliability and safe operation.",
     },
     {
-      id: 3,
       name: "Air Break Contactors",
-      thumbnail: slide3,
-      description: "Protection device used in electrical installations",
+      image: contactorsImage,
+      route: "/Product/Contactors",
+      description: "Core switching components designed for repeat cycles, rugged duty, and long service life.",
     },
     {
-      id: 4,
-      name: "Plug and Sockets",
-      thumbnail: slide4,
-      description: "Heavy duty plugs and sockets for various applications",
+      name: "Plug Sockets",
+      image: plugSocketsImage,
+      route: "/Product/PlugSockets",
+      description: "Industrial-grade connectivity hardware for heavy-duty electrical applications.",
     },
     {
-      id: 5,
       name: "Limit Switches",
-      thumbnail: slide5,
-      description: "Limit switches",
+      image: limitSwitchImage,
+      route: "/Product/LimitSwitches",
+      description: "Reliable position-detection and control components for automation and machinery systems.",
     },
     {
-      id: 6,
-      name: "Accessories",
-      thumbnail: slide6,
-      description: "Panel accessories",
-    }  ];
+      name: "Panel Accessories",
+      image: accessoriesImage,
+      route: "/Product/PanelAccessories",
+      description: "Accessory components that complete durable, serviceable, and efficient panel assemblies.",
+    },
+  ];
 
-    const columns = 2;
-  const renderColumns = () => {
-    const rows = [];
-    const totalRows = Math.ceil(products.length / columns);
-    console.log(totalRows);
-    for (let i = 0; i < totalRows; i++) {
-      const row = products.slice(i * columns, (i + 1) * columns).map((product) => (
-        <Link to={`/product/${product.id}`} key={product.id} className="product-card">
-          <img src={product.thumbnail} alt={product.name} className="thumbnail" />
-          <div className="thumb-description">
-            <div className="thumb-name">{product.name}</div>
-            {product.description}
+  return (
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Products</p>
+            <h1 className="page-title">A structured portfolio for modern electrical control.</h1>
           </div>
-        </Link>
-      ));
+          <p className="page-summary">
+            Apex products are organized for clarity: essential switchgear,
+            control equipment, pumping panels, and accessory systems that serve
+            industrial, infrastructure, and commercial environments.
+          </p>
+        </div>
+      </section>
 
-      // Add empty placeholders if the last row has fewer items
-      if (row.length < columns) {
-        const emptyColumns = columns - row.length;
-        for (let j = 0; j < emptyColumns; j++) {
-          row.push(<div key={`empty-${j}`} className="empty-column"></div>);
-        }
-      }
-
-      rows.push(<div className="row" key={i}>{row}</div>);
-    }
-
-    return rows;
-  };
-
-return  <><h3 className="centered-text mt-2"> Our Products </h3>
-<div className="h-center centered-text">
-<div className="product-row">{renderColumns()}</div></div></>;
+      <section className="page-section">
+        <div className="catalog-grid">
+          {products.map((product) => (
+            <Link href={product.route} key={product.name} className="catalog-card">
+              <img src={product.image.src || product.image} alt={product.name} loading="lazy" className="catalog-image" />
+              <div className="catalog-body">
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 };
 
 export default Products;

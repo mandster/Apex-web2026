@@ -4,71 +4,43 @@ import panelauto from "../image/submersiblepanels.jpg";
 
 const SubmersiblePanels = () => {
   return (
-    <>
-      <header>
-        <h3 className="centered-text">Submersible Pump Control Panel</h3>
-      </header>
-
-      {/* <img className="centered" src="your-big-image.jpg" alt="Big Image" /> */}
-
-      <div className="description">
-        <p>
-          A <b>Submersible Pump Control Panel </b> is an electrical control
-          system designed for managing and protecting submersible pumps.
-          Submersible pumps are typically used for pumping water from wells,
-          boreholes, or other submerged sources. The control panel plays a
-          crucial role in monitoring and controlling the operation of the
-          submersible pump to ensure efficient and safe water pumping.
-        </p>
-      </div>
-
-      <div className="variant-container">
-        <div className="product-description">
-          <p>
-            <b>Apex Single Phase Submersible Pump Control Panel </b>is useful
-            where the appliance in question is uses Single Phase connection up
-            to 5 H.P.
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero compact-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Submersible Panels</p>
+            <h1 className="page-title">Protection and control for dependable pump operation.</h1>
+          </div>
+          <p className="page-summary">
+            Apex submersible pump control panels are designed to manage pump performance,
+            electrical protection, and operating continuity across different site requirements.
           </p>
         </div>
-        <div className="float-child2 float-right mb-4">
-          <img
-            src={panelsp}
-            alt="Apex Single Phase Submersible Pump Control Panel"
-            className="product-image"
-          />
-        </div>
-
-        <div className="product-description">
-          <p>
-            <b>Apex Three Phase Submersible Pump Control Panel </b>is used where
-            the connection is Three Phase up tp 10H.P.
-          </p>
-        </div>
-        <div className="float-child2 float-right">
-          <img
-            src={paneltp}
-            alt="Apex Three Phase Submersible Pump Control Panel"
-            className="product-image"
-          />
-        </div>
-        <div className="product-description">
-          <p>
-            <b>Apex Automatic Submersible Pump Control Panel </b>are used for
-            protection of Heavy Duty Three Phase Submersible-Pumps upto 30 H.P.
-            These panels start the pump in star position and when the pump gains
-            its rated speed they automatically transfer it from star to delta
-            position.
-          </p>
-        </div>
-        <div className="float-child2 float-right mt-4">
-          <img
-            src={panelauto}
-            alt="Apex Automatic Submersible Pump Control Panel"
-            className="product-image"
-          />
-        </div>
-      </div>
-    </>
+      </section>
+      <section className="page-section variant-gallery stacked-gallery">
+        <article className="variant-card-editorial wide-variant-card">
+          <img src={panelsp.src || panelsp} alt="Apex Single Phase Submersible Pump Control Panel" loading="lazy" className="variant-image" />
+          <div>
+            <h3>Single Phase Panel</h3>
+            <p>Suitable for single-phase applications up to 5 H.P. where compact and dependable pump control is required.</p>
+          </div>
+        </article>
+        <article className="variant-card-editorial wide-variant-card">
+          <img src={paneltp.src || paneltp} alt="Apex Three Phase Submersible Pump Control Panel" loading="lazy" className="variant-image" />
+          <div>
+            <h3>Three Phase Panel</h3>
+            <p>Built for three-phase connections up to 10 H.P. with stable control and protective functionality.</p>
+          </div>
+        </article>
+        <article className="variant-card-editorial wide-variant-card">
+          <img src={panelauto.src || panelauto} alt="Apex Automatic Submersible Pump Control Panel" loading="lazy" className="variant-image" />
+          <div>
+            <h3>Automatic Panel</h3>
+            <p>Designed for heavier-duty three-phase pumps, including automatic star-to-delta transition during startup.</p>
+          </div>
+        </article>
+      </section>
+    </main>
   );
 };
 

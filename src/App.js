@@ -41,7 +41,7 @@ export default function App() {
   return ( 
    
     <BrowserRouter>
-    <div className="container"> 
+    <div className="site-shell"> 
 
     < Navbar />
  
@@ -52,8 +52,8 @@ export default function App() {
         <Route path="/Products" element={<Products />} />
         <Route path="/Careers" element={<Careers />} />
         <Route path="/Product/Starters" element={<Starters />} />
-        <Route path="Product/ControlSwitches" element={< ControlSwitches />} />
-        <Route path="Product/SubmersiblePanels" element={< SubmersiblePanels />} />
+        <Route path="/Product/ControlSwitches" element={< ControlSwitches />} />
+        <Route path="/Product/SubmersiblePanels" element={< SubmersiblePanels />} />
         <Route path="/Product/PanelAccessories" element={<OtherProducts />} />
         <Route path="/Product/LimitSwitches" element={<OtherProducts />} />
         <Route path="/Product/PlugSockets" element={<OtherProducts />} />

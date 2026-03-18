@@ -2,69 +2,41 @@ import reversing from "../image/reversing.jpg";
 
 const ReverseForwardStarters = () => {
   return (
-    <>
-      <header>
-        <h3 className="centered-text">Reverse Forward Motor Starters</h3>
-      </header>
-
-      {/* <img className="centered" src="your-big-image.jpg" alt="Big Image" /> */}
-      <div className="description">
-        <p>
-          A <b>Reverse Forward Motor Starter </b> is an electrical device
-          designed to control the direction of rotation of an electric motor. It
-          enables the motor to operate in both forward and reverse directions,
-          allowing for greater flexibility in applications where the motor needs
-          to perform tasks such as moving machinery, conveyors, or other
-          equipment in both directions.{" "}
-        </p>
-        <div className="variant-container">
-          <div className="product-description">
-            <p>
-              <b>Apex Reverse Forward Starter </b> starts in
-              `&apos;Forward`&apos; motion with the press of green push button
-              on the front, red button to stop and black to Reverse the
-              operation.
-            </p>
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero compact-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Reverse Forward Starters</p>
+            <h1 className="page-title">Bidirectional motor control for operational flexibility.</h1>
           </div>
-          <div className="float-child2 float-right mb-4">
-            <img
-              src={reversing}
-              alt="Apex Reverse Forward Motor Starter"
-              className="product-image"
-            />
-          </div>
+          <p className="page-summary">
+            Reverse-forward starters enable controlled switching between motor directions,
+            making them suitable for conveyors, machinery, lifting systems, and similar equipment.
+          </p>
         </div>
-
-        <p>
-          <i>Key features and principles of Reverse Forward Motor Starters: </i>
-        </p>
-        <p>
-          <i>Direction Control:</i> The primary function of a Reverse Forward
-          Motor Starter is to control the direction of the motor`&apos;s
-          rotation. This is achieved by changing the phase sequence of the motor
-          windings, which determines the direction of the magnetic field and,
-          subsequently, the direction of rotation.
-        </p>
-        <p>
-          <i>Switching Mechanism:</i> The starter typically includes a switching
-          mechanism that allows the user to select between forward and reverse
-          modes. This can be achieved using a manual switch, a control panel, or
-          in more advanced systems, through automated control systems.
-        </p>
-        <p>
-          <i>Protection:</i> Many reverse forward starters incorporate
-          protection features to safeguard the motor and the electrical system.
-          These may include overload protection to prevent excessive current
-          draw, short circuit protection, and other safety measures.
-        </p>
-        <p>
-          <i>Applications:</i> Reverse Forward Motor Starters find applications
-          in various industries where motors need to reverse direction
-          periodically. Common uses include conveyor systems, cranes, winches,
-          and other machinery requiring bidirectional movement.
-        </p>
-      </div>
-    </>
+      </section>
+      <section className="page-section product-story-grid">
+        <div className="story-copy">
+          <p>
+            Apex reverse-forward starters are designed for controlled directional switching,
+            with practical operator access and integrated protection logic for industrial use.
+          </p>
+          <ul className="editorial-list">
+            <li>Forward and reverse direction control</li>
+            <li>Suitable for mechanical movement systems</li>
+            <li>Supports safe stopping and switching logic</li>
+            <li>Applicable in conveyors, cranes, and winches</li>
+          </ul>
+        </div>
+        <article className="variant-card-editorial wide-variant-card">
+          <img src={reversing.src || reversing} alt="Apex Reverse Forward Motor Starter" loading="lazy" className="variant-image" />
+          <div>
+            <h3>Reverse Forward Starter</h3>
+            <p>Configured for forward operation, stop control, and directional reversal through clearly defined front controls.</p>
+          </div>
+        </article>
+      </section>
+    </main>
   );
 };
 

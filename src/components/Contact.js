@@ -1,30 +1,44 @@
 import SocialIcons from "./SocialIcons";
-import "./Contact.css";
 
 const Contact = () => {
   return (
-    <>
-      <header>
-        <h3 className="centered-text">Contact Us</h3>
-      </header>
-      <div className="contact-container">
-        <div className="contact-column" id="1">
-          <div className="address italics">
-            <p>Apex House E-18 Industrial Area</p>
-            <p>Jalandhar - 144004, Punjab, India</p>
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero compact-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Contact</p>
+            <h1 className="page-title">Connect with Apex Electricals.</h1>
           </div>
-          <div className="contact-details italics">
-            <p><b>Email:</b> <a href="mailto:sales@apexelectricals.com">sales@apexelectricals.com </a></p>
-            <p><b>Phone:</b> +91 181 2290463</p>
-            <p><b>Mobile:</b> +91 9988600162</p>
+          <p className="page-summary">
+            For product enquiries, dealer discussions, and technical conversations,
+            contact the Apex team directly.
+          </p>
+        </div>
+      </section>
+      <section className="page-section">
+        <div className="contact-panel">
+          <div>
+            <h2>Head Office</h2>
+            <div className="contact-stack">
+              <p>Apex House E-18 Industrial Area</p>
+              <p>Jalandhar - 144004, Punjab, India</p>
+            </div>
+          </div>
+          <div>
+            <h2>Reach Us</h2>
+            <div className="contact-stack">
+              <p><a href="mailto:sales@apexelectricals.com">sales@apexelectricals.com</a></p>
+              <p>+91 181 2290463</p>
+              <p>+91 9988600162</p>
+            </div>
+          </div>
+          <div>
+            <h2>Social</h2>
+            <SocialIcons />
           </div>
         </div>
-        <div className="contact-column centered-text" id="2">
-          <h5>Follow us on:</h5>
-          <SocialIcons />
-        </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 };
 

@@ -1,5 +1,3 @@
-import "./styles.css"
-
 const NoPage = () => {
   return (
     <div className="no-page">

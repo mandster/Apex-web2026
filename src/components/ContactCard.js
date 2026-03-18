@@ -1,7 +1,7 @@
 
 const ContactCard = () => {
   return (
-    <div>
+    <div className="footer-contact-card">
       <h2>Contact Us</h2>
       <div className="address">
         <div>Apex Electricals</div>

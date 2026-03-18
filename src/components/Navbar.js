@@ -1,58 +1,144 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Navbar.css";
-import logo from "../image/Apex_logo_23.png";
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import logo from "../image/apex_logo1.jpeg";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isStartersOpen, setIsStartersOpen] = useState(false);
+  const router = useRouter();
 
-  const handleNavLinkClick = () => {
-    const navCollapse = document.getElementById('navbarNavDropdown');
-    if (navCollapse.classList.contains('show')) {
-      navCollapse.classList.remove('show');
-    }
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsProductsOpen(false);
+    setIsStartersOpen(false);
+  }, [router.asPath]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const toggleProducts = () => {
+    setIsProductsOpen((prev) => !prev);
+  };
+
+  const toggleStarters = () => {
+    setIsStartersOpen((prev) => !prev);
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top" style={{ backgroundColor: "#ffffff" }}>
-      <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
-          <img src={logo} alt="APEX ELECTRICALS" className="main-logo" />
+    <nav className={`premium-navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="premium-nav-inner">
+        <Link href="/" className="brand-link" aria-label="Apex Electricals Home">
+          <img src={logo.src || logo} alt="Apex Electricals" className="main-logo" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" style={{ backgroundColor: "#474747" }} data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+
+        <button
+          type="button"
+          className={`menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="primary-navigation"
+          aria-label="Toggle navigation"
+        >
+          <span />
+          <span />
+          <span />
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav ms-auto dark-bg centered-text" style={{ width: "100%", right: "0" }}>
-            <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={handleNavLinkClick}>Home</Link>
+
+        <div
+          id="primary-navigation"
+          className={`nav-panel ${isMobileMenuOpen ? 'open' : ''}`}
+        >
+          <ul className="nav-list">
+            <li className="nav-item-root">
+              <Link className="nav-link" href="/">Home</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/About" onClick={handleNavLinkClick}>About</Link>
+
+            <li className="nav-item-root">
+              <Link className="nav-link" href="/About">About</Link>
             </li>
-            <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" to="/Products">
-                Products
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li className="dropdown-submenu">
-                  <Link className="dropdown-item dropdown-toggle" to="/Product/Starters/" onClick={handleNavLinkClick}>Motor Starters</Link>
-                  <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/Product/Starters/DirectOnlineStarters" onClick={handleNavLinkClick}>Direct Online Motor Starters</Link></li>
-                    <li><Link className="dropdown-item" to="/Product/Starters/StarDeltaStarters" onClick={handleNavLinkClick}>Star Delta Motor Starters</Link></li>
-                    <li><Link className="dropdown-item" to="/Product/Starters/ReverseForwardStarters" onClick={handleNavLinkClick}>Reverse Forward Starters</Link></li>
+
+            <li className={`nav-item-root has-dropdown ${isProductsOpen ? 'open' : ''}`}>
+              <div className="nav-link-row">
+                <Link className="nav-link" href="/Products">Products</Link>
+                <button
+                  type="button"
+                  className="submenu-toggle"
+                  onClick={toggleProducts}
+                  aria-expanded={isProductsOpen}
+                  aria-label="Toggle products menu"
+                >
+                  +
+                </button>
+              </div>
+
+              <div className="dropdown-menu mega-menu-desktop" role="menu" aria-label="Products menu">
+                <ul className="mega-list">
+                  <li className="mega-item has-flyout">
+                    <Link className="mega-link-main" href="/Product/Starters">Motor Starters</Link>
+                    <div className="starter-flyout" role="menu" aria-label="Motor Starter Types">
+                      <p className="mega-title">Starter Types</p>
+                      <Link className="mega-link" href="/Product/Starters/DirectOnlineStarters">Direct Online Starters</Link>
+                      <Link className="mega-link" href="/Product/Starters/StarDeltaStarters">Star Delta Starters</Link>
+                      <Link className="mega-link" href="/Product/Starters/ReverseForwardStarters">Reverse Forward Starters</Link>
+                    </div>
+                  </li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/ControlSwitches">L.T. Control Switches</Link></li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/Contactors">Air Break Contactors</Link></li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/SubmersiblePanels">Submersible Panels</Link></li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/LimitSwitches">Limit Switches</Link></li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/PlugSockets">Plug Sockets</Link></li>
+                  <li className="mega-item"><Link className="mega-link-main" href="/Product/PanelAccessories">Panel Accessories</Link></li>
+                </ul>
+              </div>
+
+              <ul className="dropdown-menu level-1 mobile-product-tree" role="menu">
+                <li className={`dropdown-item has-dropdown ${isStartersOpen ? 'open' : ''}`}>
+                  <div className="dropdown-link-row">
+                    <Link className="dropdown-link" href="/Product/Starters">Motor Starters</Link>
+                    <button
+                      type="button"
+                      className="submenu-toggle"
+                      onClick={toggleStarters}
+                      aria-expanded={isStartersOpen}
+                      aria-label="Toggle motor starters menu"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <ul className="dropdown-menu level-2" role="menu">
+                    <li><Link className="dropdown-link" href="/Product/Starters/DirectOnlineStarters">Direct Online Starters</Link></li>
+                    <li><Link className="dropdown-link" href="/Product/Starters/StarDeltaStarters">Star Delta Starters</Link></li>
+                    <li><Link className="dropdown-link" href="/Product/Starters/ReverseForwardStarters">Reverse Forward Starters</Link></li>
                   </ul>
                 </li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/ControlSwitches" onClick={handleNavLinkClick}>L.T. Control Switches</Link></li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/Contactors" onClick={handleNavLinkClick}>Air Break Contactors</Link></li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/SubmersiblePanels" onClick={handleNavLinkClick}>Submersible Panels</Link></li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/LimitSWitches" onClick={handleNavLinkClick}>Limit Switches</Link></li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/PlugSockets" onClick={handleNavLinkClick}>Plug Sockets</Link></li>
-                <li className="dropdown-submenu"><Link className="dropdown-item" to="/Product/PanelAccessories" onClick={handleNavLinkClick}>Panel Accessories</Link></li>
+
+                <li><Link className="dropdown-link" href="/Product/ControlSwitches">L.T. Control Switches</Link></li>
+                <li><Link className="dropdown-link" href="/Product/Contactors">Air Break Contactors</Link></li>
+                <li><Link className="dropdown-link" href="/Product/SubmersiblePanels">Submersible Panels</Link></li>
+                <li><Link className="dropdown-link" href="/Product/LimitSwitches">Limit Switches</Link></li>
+                <li><Link className="dropdown-link" href="/Product/PlugSockets">Plug Sockets</Link></li>
+                <li><Link className="dropdown-link" href="/Product/PanelAccessories">Panel Accessories</Link></li>
               </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Contact" onClick={handleNavLinkClick}>Contact Us</Link>
+
+            <li className="nav-item-root">
+              <Link className="nav-link" href="/Contact">Contact</Link>
             </li>
           </ul>
         </div>

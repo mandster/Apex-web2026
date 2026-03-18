@@ -26,6 +26,7 @@
     "jquery": "^3.7.1",
     "loader": "^2.1.1",
     "lodash": "^4.17.21",
+    "next": "^14.2.24",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
@@ -33,7 +34,6 @@
     "react-router": "^6.24.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^6.24.0",
-    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "react-transition-group": "^4.4.5",
     "scripts": "^0.1.0",
@@ -46,10 +46,10 @@
     "webpack": "^5.89.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
   },
   "rules": {
     "react/no-unescaped-entities": "off",

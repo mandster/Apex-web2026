@@ -4,107 +4,69 @@ import contactor22 from "../image/contactor22.jpg";
 import contactor38 from "../image/contactor38.jpg";
 import contactorChannel from "../image/contactorchannel.jpg";
 import contactorChannel2 from "../image/contactorchannel2.jpg";
-import "../styles.css";
 
 const Contactors = () => {
   return (
-    <>
-      <header>
-        <h3 className="centered-text">Air Break Contactors</h3>
-      </header>
-      <div className="description">
-        <p>
-          A <b>Contactor</b> is the heart of motor starters and many other
-          important electrical installations and panels. They make or break the
-          connections after receiving signals from either Over-Load Relays or
-          any other mechanism. Being capable of performing millions of
-          operations, they have Silver Alloys as contacts and the outer body is
-          heat resistant. They consist of a Solenoid Coil, a Core (set), and
-          Contacts.
-        </p>
-        <div>
-          Contactors are used to control electric motors, lighting, heating,
-          capacitor banks, and other electrical loads.
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero compact-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Air Break Contactors</p>
+            <h1 className="page-title">Core switching components for repeated industrial duty.</h1>
+          </div>
+          <p className="page-summary">
+            Apex contactors are designed for motor control and power switching applications where
+            long electrical life, replaceability, and rugged operation are essential.
+          </p>
         </div>
-        <ul className="custom-list">
-          <li>High electrical and mechanical life Noise-free and chatter-free operation</li>
-          <li>Heat resistant outer body</li>
-          <li>Special protection to personal from live parts</li>
-          <li>Replacement of Coil and contacts extremely easy</li>
-          <li>Proper marking on power and auxiliary terminals for error-free wiring.</li>
-        </ul>
-      </div>
-      <div className="variant-container">
-        <div className="variant-item">
-          <div className="float-child2">
-            <img
-              src={contactorChannel}
-              alt="Apex 'COMMANDER' series Contactor"
-              className="product-image"
-            />
-            <img
-              src={contactorChannel2}
-              alt="Apex 'COMMANDER' series Contactor"
-              className="product-image"
-            />
+      </section>
+      <section className="page-section editorial-columns">
+        <article>
+          <p>
+            Contactors make and break electrical connections in response to control signals.
+            They are fundamental to motor starters, panel assemblies, capacitor banks, and a broad range of load applications.
+          </p>
+        </article>
+        <article>
+          <ul className="editorial-list">
+            <li>High electrical and mechanical life</li>
+            <li>Noise-free and chatter-free operation</li>
+            <li>Heat-resistant outer body</li>
+            <li>Protection from live parts</li>
+            <li>Easy replacement of coils and contacts</li>
+          </ul>
+        </article>
+      </section>
+      <section className="page-section catalog-grid contactor-grid">
+        <article className="catalog-card static-card">
+          <div className="dual-image-grid">
+            <img src={contactorChannel.src || contactorChannel} alt="Apex COMMANDER series contactor" loading="lazy" className="catalog-image" />
+            <img src={contactorChannel2.src || contactorChannel2} alt="Apex COMMANDER series contactor side view" loading="lazy" className="catalog-image" />
           </div>
-          <div className="product-description">
-            <div>
-              <b>Apex COMMANDER Contactor</b> series has a modular design.
-              Designed to perform in rugged conditions, it comes ready with
-              1NO+1NC arrangement and various NO/NC arrangements using auxiliary
-              contact blocks. These auxiliary contact blocks are quick and simple
-              to mount. Apex Single Phase Submersible Pump Control Panel is useful
-              where the appliance in question is uses Single Phase connection up
-              to 5 H.P.
-            </div>
-            <div>
-              Also, the design specifically emphasizes minimizing cost. The parts
-              are very easy to replace, which brings down the down-time, hence
-              cutting costs sharply.
-            </div>
+          <div className="catalog-body">
+            <h3>COMMANDER Series</h3>
+            <p>Modular design with flexible auxiliary arrangements and easy field serviceability.</p>
           </div>
-        </div>
-        <div className="variant-item">
-          <div className="float-child2">
-            <img
-              src={contactor16}
-              alt="Apex Three Phase Submersible Pump Control Panel"
-              className="product-image"
-            />
+        </article>
+        <article className="catalog-card static-card">
+          <img src={contactor16.src || contactor16} alt="Apex contactor 16 A" loading="lazy" className="catalog-image" />
+          <div className="catalog-body">
+            <h3>Compact Build</h3>
+            <p>Efficient format for panel integration where footprint and access both matter.</p>
           </div>
-          <div className="product-description">
-            <p>
-              <b>Apex Three Phase Submersible Pump Control Panel</b> is used where
-              the connection is Three Phase up to 10 H.P.
-            </p>
+        </article>
+        <article className="catalog-card static-card">
+          <div className="dual-image-grid">
+            <img src={contactor22.src || contactor22} alt="Apex contactor 22 A" loading="lazy" className="catalog-image" />
+            <img src={contactor38.src || contactor38} alt="Apex contactor 38 A" loading="lazy" className="catalog-image" />
           </div>
-        </div>
-        <div className="variant-item">
-          <div className="float-child2">
-            <img
-              src={contactor22}
-              alt="Apex Automatic Submersible Pump Control Panel"
-              className="product-image"
-            />
-            <img
-              src={contactor38}
-              alt="Apex Automatic Submersible Pump Control Panel"
-              className="product-image"
-            />
+          <div className="catalog-body">
+            <h3>Expanded Range</h3>
+            <p>Multiple capacities to support different duty classes and installation requirements.</p>
           </div>
-          <div className="product-description">
-            <p>
-              <b>Apex Automatic Submersible Pump Control Panel</b> is used for
-              protection of Heavy Duty Three Phase Submersible-Pumps up to 30 H.P.
-              These panels start the pump in star position and when the pump gains
-              its rated speed they automatically transfer it from star to delta
-              position.
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
+        </article>
+      </section>
+    </main>
   );
 };
 

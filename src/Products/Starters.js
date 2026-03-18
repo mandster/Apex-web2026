@@ -2,51 +2,68 @@ import starters from "../image/starters.jpg";
 import dol from "../image/dolclassic.jpg";
 import starDelta from "../image/asd.jpg";
 import reverseForward from "../image/reversing.jpg";
-import { Link } from "react-router-dom";
-import "../styles.css";
+import Link from "next/link";
 
 const Starters = () => {
   return (
-    <>
-      <header>
-       <h3 className="centered-text">Motor Starters</h3>
-      </header>
-
-      <div className="centered-text">
-        <img src={starters} alt="Apex Motor Starters" className="main-content-pic" />
-      </div>
-      <h5 className="centered-text">
-        Robust motor control and protection devices
-      </h5>
-      <div className="a-paragraph p-3 m-5 pb-1 mb-1 mt-2">
-        A motor starter is an electrical device used to start, stop, and protect electric motors. It typically consists of a combination of components that work together to control the flow of electricity to the motor and provide the necessary protection against overloads, short circuits, and other electrical faults.
-        <br />
-        The primary components of a motor starter include Contactors, Overload Relays among other components.
-      </div>
-      <div className="product-container">
-        <Link className="no-decor" to="/Product/Starters/DirectOnlineStarters">
-          <div className="p-4 centered-text">
-            <img src={dol} alt="Apex Direct Online Motor Starter" className="thumbnail2" />
-            <br />
-            <span className="product-caption">Direct Online Motor Starters</span>
+    <main className="page-shell">
+      <section className="page-hero editorial-page-hero compact-hero">
+        <div className="page-hero-grid">
+          <div>
+            <p className="section-kicker">Motor Starters</p>
+            <h1 className="page-title">Control, protect, and start motors with confidence.</h1>
           </div>
-        </Link>
-        <Link className="no-decor" to="/Product/Starters/StarDeltaStarters">
-          <div className="p-4 centered-text">
-            <img src={starDelta} alt="Apex Star Delta Starter" className="thumbnail2" />
-            <br />
-            <span className="product-caption">Star Delta Starters</span>
-          </div>
-        </Link>
-        <Link className="no-decor" to="/Product/Starters/ReverseForwardStarters">
-          <div className="p-4 centered-text">
-            <img src={reverseForward} alt="Apex Forward Reverse Starter" className="thumbnail2" />
-            <br />
-            <span className="product-caption">Forward Reverse Starters</span>
-          </div>
-        </Link>
-      </div>
-    </>
+          <p className="page-summary">
+            Apex motor starters are built to manage electrical starting duty with
+            reliability, serviceability, and practical protection for daily industrial use.
+          </p>
+        </div>
+      </section>
+      <section className="page-section">
+        <div className="feature-hero-media">
+          <img src={starters.src || starters} alt="Apex Motor Starters" loading="eager" className="feature-hero-image" />
+        </div>
+      </section>
+      <section className="page-section editorial-columns">
+        <article>
+          <p>
+            A motor starter combines switching and protection elements that help
+            start, stop, and safeguard electric motors against overload and electrical faults.
+          </p>
+        </article>
+        <article>
+          <p>
+            Apex manufactures multiple starter configurations to suit different
+            application requirements, operating methods, and installation conditions.
+          </p>
+        </article>
+      </section>
+      <section className="page-section">
+        <div className="catalog-grid compact-catalog-grid">
+          <Link className="catalog-card" href="/Product/Starters/DirectOnlineStarters">
+            <img src={dol.src || dol} alt="Apex Direct Online Motor Starter" loading="lazy" className="catalog-image" />
+            <div className="catalog-body">
+              <h3>Direct Online Starters</h3>
+              <p>Simple, proven, and effective starting for a wide range of motor duties.</p>
+            </div>
+          </Link>
+          <Link className="catalog-card" href="/Product/Starters/StarDeltaStarters">
+            <img src={starDelta.src || starDelta} alt="Apex Star Delta Starter" loading="lazy" className="catalog-image" />
+            <div className="catalog-body">
+              <h3>Star Delta Starters</h3>
+              <p>Reduced-current starting architecture for larger motor applications.</p>
+            </div>
+          </Link>
+          <Link className="catalog-card" href="/Product/Starters/ReverseForwardStarters">
+            <img src={reverseForward.src || reverseForward} alt="Apex Forward Reverse Starter" loading="lazy" className="catalog-image" />
+            <div className="catalog-body">
+              <h3>Reverse Forward Starters</h3>
+              <p>Directional motor control for equipment requiring forward and reverse motion.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
 
