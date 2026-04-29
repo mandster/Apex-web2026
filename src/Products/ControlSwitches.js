@@ -1,5 +1,6 @@
 import control32 from "../image/controlswitch32.jpg";
 import control63 from "../image/rf63.jpg";
+import Link from "next/link";
 
 const ControlSwitches = () => {
   return (
@@ -8,44 +9,100 @@ const ControlSwitches = () => {
         <div className="page-hero-grid">
           <div>
             <p className="section-kicker">L.T. Control Switches</p>
-            <h1 className="page-title">Low-voltage control switching for industrial duty.</h1>
+            <h1 className="page-title">
+              Rotary control switching for dependable low-voltage panel duty.
+            </h1>
           </div>
           <p className="page-summary">
-            Apex control switches are designed for frequent operation,
-            consistent contact performance, and motor-control applications.
+            Apex L.T. Control Switches are built for reliable circuit control in
+            industrial panels and low-voltage systems, with a catalogue range up
+            to 63 Amps.
           </p>
         </div>
       </section>
+
       <section className="page-section product-story-grid">
         <div className="story-copy">
           <p>
-            These switches support on-off control, reversing, change-over,
-            and star-delta functions in low-voltage motor-control circuits.
+            Apex control switches are designed for repeated switching duty in
+            motor-control and distribution applications where operational
+            simplicity, dependable contact performance, and long service life are
+            essential.
           </p>
+
+          <p>
+            While the broader catalogue includes multiple switching formats, your
+            current manufacturing focus can be presented clearly through the three
+            core types below.
+          </p>
+
           <ul className="editorial-list">
-            <li>On-Off Switches</li>
+            <li>ON-OFF Control Switches</li>
             <li>Forward-Reverse Switches</li>
-            <li>Forward-Reverse Pole Changing Switches</li>
-            <li>Change-Over Switches</li>
-            <li>Star-Delta Switches</li>
-            <li>Phase Changer Switches</li>
+            <li>Changeover Switches</li>
           </ul>
+
+          <p>
+            These switches are especially suited to industrial control panels,
+            machine interfaces, utility switching points, and low-voltage motor
+            applications where positive operator control matters.
+          </p>
         </div>
+
         <div className="variant-gallery">
           <article className="variant-card-editorial">
-            <img src={control32.src || control32} alt="Apex L.T Control Switches 32 A" loading="lazy" className="variant-image" />
+            <img
+              src={control32.src || control32}
+              alt="32A ON-OFF industrial control switch for electrical panel"
+              loading="lazy"
+              className="variant-image"
+            />
             <div>
               <h3>32 A</h3>
-              <p>Designed for standard low-voltage control applications with reliable mechanical performance.</p>
+              <p>
+                A versatile rating for standard panel-building and equipment-control
+                applications where compactness and reliable switching performance
+                are both important.
+              </p>
             </div>
           </article>
+
           <article className="variant-card-editorial">
-            <img src={control63.src || control63} alt="Apex L.T Control Switches 63 A" loading="lazy" className="variant-image" />
+            <img
+              src={control63.src || control63}
+              alt="63A changeover and forward-reverse control switch for industrial use"
+              loading="lazy"
+              className="variant-image"
+            />
             <div>
               <h3>63 A</h3>
-              <p>Higher-capacity switching for heavier loads and more demanding duty cycles.</p>
+              <p>
+                Built for heavier-duty low-voltage switching requirements, offering
+                higher current handling for more demanding industrial installations.
+              </p>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="content-container">
+          <h2 className="section-title">Where They Fit</h2>
+          <div className="application-grid">
+            <p>Motor Control Panels</p>
+            <p>Machine Tool Circuits</p>
+            <p>Utility Changeover Duties</p>
+            <p>Industrial Distribution Boards</p>
+            <p>Operator Control Stations</p>
+          </div>
+
+          <h3 className="section-title">Explore Related Products</h3>
+          <p>
+            Need complementary panel hardware for complete low-voltage control architecture?
+            Explore our <Link href="/Product/Starters/ReverseForwardStarters"> Forward-Reverse Switch Starter solutions</Link>,
+            <Link href="/Product/Contactors"> industrial contactors</Link>, and
+            <Link href="/Product/PanelAccessories"> panel accessories</Link> to build a reliable end-to-end system.
+          </p>
         </div>
       </section>
     </main>

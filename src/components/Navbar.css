@@ -1,10 +1,14 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+
 .premium-navbar {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 1200;
   background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid transparent;
-  transition: background-color 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease;
+  transition: background 220ms ease, border-color 220ms ease;
 }
 
 .premium-navbar.home-route {
@@ -12,75 +16,88 @@
 }
 
 .premium-navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border-bottom-color: rgba(17, 17, 17, 0.12);
   backdrop-filter: blur(12px);
 }
 
-.premium-navbar.home-route:not(.scrolled) .nav-link,
-.premium-navbar.home-route:not(.scrolled) .brand-link,
-.premium-navbar.home-route:not(.scrolled) .submenu-toggle {
-  color: #f2f4f8;
-}
-
-.premium-navbar.home-route:not(.scrolled) .menu-toggle span {
-  background: #f2f4f8;
-}
-
-.premium-navbar.home-route:not(.scrolled) .brand-name {
-  color: #f2f4f8;
-}
-
-.premium-navbar.home-route:not(.scrolled) .nav-link:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.premium-navbar.inner-route {
-  border-bottom-color: rgba(17, 17, 17, 0.08);
-}
-
 .premium-nav-inner {
-  max-width: 1100px;
+  max-width: var(--container-max);
+  width: 100%;
   margin: 0 auto;
-  padding: 24px 24px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden; /* 🔥 prevents shift */
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.brand-link {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.brand-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
   text-decoration: none;
   flex-shrink: 0;
-}
-
-.brand-name {
-  font-size: clamp(1.15rem, 1.2vw + 0.8rem, 1.85rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #151515;
-  line-height: 0.98;
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .main-logo {
-  height: 56px;
+  height: 64px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* WORDMARK (APEX + ELECTRICALS) */
+
+.brand-wordmark {
+  display: flex;
+  align-items: flex-end;   /* keeps structural alignment */
+  gap: 10px;               /* closer to X */
+}
+
+/* APEX */
+
+.brand-apex-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.brand-apex-img {
+  height: 58px;
   display: block;
 }
+
+/* ELECTRICALS */
+
+.brand-electricals {
+  margin: 0;
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6f7680;
+  line-height: 1;
+
+  margin-left: -6px;
+
+  position: relative;
+  top: 4px;          /* 🔥 THIS is the real baseline fix */
+}/* =========================
+   MENU BUTTON
+========================= */
 
 .menu-toggle {
   margin-left: auto;
   display: none;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background: rgba(255, 255, 255, 0.45);
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -92,20 +109,11 @@
   width: 18px;
   height: 1.5px;
   background: #111;
-  transition: transform 180ms ease, opacity 180ms ease;
 }
 
-.menu-toggle.open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav-panel {
   margin-left: auto;
@@ -113,353 +121,111 @@
 
 .nav-list {
   list-style: none;
+  display: flex;
+  gap: 6px;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-item-root {
-  position: relative;
-}
-
-.nav-link-row,
-.dropdown-link-row {
-  display: flex;
-  align-items: center;
-}
-
-.nav-link,
-.dropdown-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #151515;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: color 180ms ease, background-color 180ms ease;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-link {
-  padding: 12px 14px;
-  border-radius: 10px;
-}
-
-.dropdown-link {
-  width: 100%;
-  padding: 10px 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #151515;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   border-radius: 8px;
-  font-size: 0.82rem;
 }
 
-.nav-link:hover,
-.dropdown-link:hover {
+.nav-link:hover {
   color: #133f9f;
   background: rgba(19, 63, 159, 0.07);
-  text-decoration: none;
 }
 
-.nav-link:focus,
-.dropdown-link:focus,
-.mega-link:focus,
-.mega-link-main:focus {
-  text-decoration: none;
-}
+/* =========================
+   MOBILE
+========================= */
 
-.submenu-toggle {
-  border: none;
-  background: transparent;
-  color: #151515;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.dropdown-menu {
-  list-style: none;
-  margin: 0;
-  padding: 8px;
-  border-radius: 12px;
-  border: 1px solid rgba(17, 17, 17, 0.12);
-  background: rgba(248, 245, 239, 0.98);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
-}
-
-.mega-menu-desktop {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 320px;
-  padding: 12px;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-}
-
-.mega-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mega-title {
-  margin: 0 0 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.72rem;
-  color: #5f5a53;
-}
-
-.mega-item {
-  position: relative;
-}
-
-.mega-link-main {
-  display: block;
-  text-decoration: none;
-  color: #151515;
-  border-radius: 7px;
-  padding: 10px;
-  font-size: 0.84rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  transition: color 160ms ease, background-color 160ms ease;
-}
-
-.mega-link-main:hover {
-  color: #133f9f;
-  background: rgba(19, 63, 159, 0.09);
-  text-decoration: none;
-}
-
-.mega-link {
-  display: block;
-  text-decoration: none;
-  color: #151515;
-  border-radius: 7px;
-  padding: 9px 10px;
-  font-size: 0.84rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  transition: color 160ms ease, background-color 160ms ease;
-}
-
-.mega-link:hover {
-  color: #133f9f;
-  background: rgba(19, 63, 159, 0.09);
-  text-decoration: none;
-}
-
-.mega-parent {
-  font-weight: 600;
-}
-
-.starter-flyout {
-  position: absolute;
-  top: -8px;
-  right: calc(100% + 10px);
-  left: auto;
-  min-width: 260px;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(17, 17, 17, 0.12);
-  background: rgba(248, 245, 239, 0.98);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-}
-
-.mega-item.has-flyout:hover > .starter-flyout,
-.mega-item.has-flyout:focus-within > .starter-flyout {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.level-1 {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 280px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-}
-
-.has-dropdown:hover > .level-1,
-.has-dropdown:focus-within > .level-1 {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.has-dropdown:hover > .mega-menu-desktop,
-.has-dropdown:focus-within > .mega-menu-desktop {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.level-2 {
-  position: absolute;
-  top: -6px;
-  left: calc(100% + 8px);
-  min-width: 260px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-}
-
-.level-1 .has-dropdown:hover > .level-2,
-.level-1 .has-dropdown:focus-within > .level-2 {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .premium-nav-inner {
-    padding: 24px 16px;
-    position: relative;
+    padding: 14px 16px;
   }
 
   .main-logo {
-    height: 44px;
+    height: 52px;
   }
 
-  .brand-name {
-    font-size: 1rem;
-    letter-spacing: 0.06em;
+  .brand-wordmark {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .brand-apex-img {
+    height: 42px;
+  }
+
+  .brand-electricals {
+    font-size: 22px;
+    letter-spacing: 0.22em;
+    transform: none;
+    margin: 0;
   }
 
   .menu-toggle {
-    display: inline-flex;
+    display: flex;
   }
 
   .nav-panel {
     position: absolute;
-    top: calc(100% + 8px);
-    left: 18px;
-    right: 18px;
-    margin: 0;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    background: white;
     padding: 12px;
-    border: 1px solid rgba(17, 17, 17, 0.13);
-    background: rgba(248, 245, 239, 0.99);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px);
-    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-    max-height: calc(100vh - 88px);
-    overflow-y: auto;
-  }
-
-  .premium-navbar.home-route:not(.scrolled) .nav-panel {
-    background: rgba(248, 245, 239, 0.99);
-    border-color: rgba(17, 17, 17, 0.13);
-  }
-
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .nav-link,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .dropdown-link,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .mega-link,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .mega-link-main,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .submenu-toggle,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .mega-title {
-    color: #151515;
-  }
-
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .nav-link:hover,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .dropdown-link:hover,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .mega-link:hover,
-  .premium-navbar.home-route:not(.scrolled) .nav-panel .mega-link-main:hover {
-    color: #151515;
-    background: transparent;
-  }
-
-  .nav-panel .nav-link:hover,
-  .nav-panel .dropdown-link:hover,
-  .nav-panel .mega-link:hover,
-  .nav-panel .mega-link-main:hover,
-  .nav-panel .submenu-toggle:hover,
-  .nav-panel .submenu-toggle:active,
-  .nav-panel .submenu-toggle:focus {
-    background: transparent;
-    color: #151515;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    display: none;
   }
 
   .nav-panel.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: block;
   }
 
   .nav-list {
-    display: block;
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media (max-width: 640px) {
+  .main-logo {
+    height: 44px;
   }
 
-  .nav-link-row {
-    justify-content: space-between;
+  .brand-apex-img {
+    height: 34px;
   }
 
-  .nav-link {
-    width: 100%;
-    text-align: left;
-    border-radius: 8px;
+  .brand-electricals {
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-logo {
+    height: 38px;
   }
 
-  .submenu-toggle {
-    display: inline-flex;
+  .brand-apex-img {
+    height: 30px;
   }
 
-  .level-1,
-  .level-2 {
-    position: static;
-    min-width: 0;
-    margin-top: 6px;
-    border-radius: 8px;
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    display: none;
-  }
-
-  .mega-menu-desktop {
-    display: none;
-  }
-
-  .mobile-product-tree {
-    display: none;
-  }
-
-  .has-dropdown.open > .level-1,
-  .level-1 .has-dropdown.open > .level-2 {
-    display: block;
-  }
-
-  .has-dropdown:hover > .level-1,
-  .has-dropdown:focus-within > .level-1,
-  .level-1 .has-dropdown:hover > .level-2,
-  .level-1 .has-dropdown:focus-within > .level-2 {
-    transform: none;
-  }
-
-  .level-2 {
-    margin-left: 8px;
+  .brand-electricals {
+    margin: 0;
+    font-size: 9px;
   }
 }

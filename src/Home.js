@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import startersImage from "./image/starters.jpg";
 import controlSwitchesImage from "./image/controlswitches.jpg";
 import submersibleImage from "./image/submersiblepanels.jpg";
-import contactorsImage from "./image/contactors.jpg";
+import ContactorsImage from "./image/Contactors.jpg";
 
 const trustStats = [
   { label: "Years of Experience", value: 50, suffix: "+" },
@@ -17,26 +17,26 @@ const productHighlights = [
   {
     id: "Starters",
     title: "Motor Starters",
-    description: "DOL, star-delta, and forward-reverse starters for low-voltage motor control.",
+    description: "DOL, Star-Delta, and Forward-Reverse (aka Reversing) starters for low-voltage motor control.",
     image: startersImage,
   },
   {
     id: "ControlSwitches",
     title: "L.T. Control Switches",
-    description: "Low-voltage control switches for panel and machine circuits.",
+    description: "Low-voltage Control Switches for panel and machine circuits.",
     image: controlSwitchesImage,
   },
   {
     id: "SubmersiblePanels",
     title: "Submersible Panels",
-    description: "Submersible pump panels with integrated control and protection.",
+    description: "Submersible Pump Panels with integrated control and protection.",
     image: submersibleImage,
   },
   {
     id: "Contactors",
     title: "Air Break Contactors",
-    description: "Air-break contactors for frequent switching duty.",
-    image: contactorsImage,
+    description: "Air-break Contactors for frequent switching duty.",
+    image: ContactorsImage,
   },
 ];
 
@@ -146,6 +146,35 @@ const Home = () => {
     <div className="home-premium">
       <Hero />
 
+      <section className="section-shell reveal">
+        <div className="section-head section-head-wide">
+          <p className="section-kicker">Control Switches</p>
+          <h2>Control Switch Product Range</h2>
+        </div>
+        <div className="switch-keywords-grid">
+          <h2>ON-OFF Switches</h2>
+          <h2>Forward-Reverse Switches</h2>
+          <h2>Changeover Switches</h2>
+        </div>
+      </section>
+
+      <section className="section-shell reveal">
+        <div className="section-head section-head-wide">
+          <h2>About Apex Electricals</h2>
+          <p className="section-intro">
+            Apex Electricals has over 45 years of experience in manufacturing
+            low-voltage control switches for industrial applications. Our products
+            include ON-OFF switches, Forward-Reverse switches, and Changeover switches
+            designed for durability, safety, and precision.
+          </p>
+          <p className="section-intro">
+            Explore our <Link href="/Product/ControlSwitches">ON-OFF Control Switch range</Link>,
+            <Link href="/Product/Starters/ReverseForwardStarters"> Forward-Reverse Switch solutions</Link>, and
+            <Link href="/Product/ControlSwitches"> Changeover Switch configurations</Link> for industrial panel applications.
+          </p>
+        </div>
+      </section>
+
       <section className="trust-bar reveal" ref={statsRef}>
         {trustStats.map((stat, index) => (
           <article className="trust-item" key={stat.label}>
@@ -168,7 +197,7 @@ const Home = () => {
             <Link href={`/Product/${item.id}`} className="premium-card" key={item.id}>
               <img
                 src={item.image.src || item.image}
-                alt={item.title}
+                alt={`${item.title} for industrial electrical control applications`}
                 loading="lazy"
                 className="premium-card-image"
               />
@@ -208,7 +237,7 @@ const Home = () => {
       <section className="section-shell reveal">
         <div className="section-head section-head-wide">
           <p className="section-kicker">Applications</p>
-          <h2>Used across industrial, commercial, and water-management environments.</h2>
+          <h2>Used across Industry, agriculture, commercial, domestic, and water-management environments.</h2>
         </div>
         <div className="premium-grid apps-grid editorial-apps-grid">
           {applications.map((item, index) => (

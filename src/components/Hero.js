@@ -3,28 +3,32 @@ import Link from "next/link";
 import startersImage from "../image/starters.jpg";
 import controlSwitchesImage from "../image/controlswitches.jpg";
 import submersibleImage from "../image/submersiblepanels.jpg";
-import contactorsImage from "../image/contactors.jpg";
+import ContactorsImage from "../image/Contactors.jpg";
 
 const heroSlides = [
   {
     image: startersImage,
     title: "Motor Starters",
-    subtitle: "DOL, star-delta, and forward-reverse starter systems",
+    subtitle: "DOL, Star-Delta, and Forward-Reverse (aka Reversing) starter systems",
+    alt: "Industrial motor starters including DOL and Star-Delta systems",
   },
   {
     image: controlSwitchesImage,
     title: "L.T. Control Switches",
     subtitle: "Low-voltage control switching for industrial panels",
+    alt: "ON-OFF and Changeover control switches for industrial panels",
   },
   {
     image: submersibleImage,
     title: "Submersible Panels",
     subtitle: "Integrated pump control and electrical protection",
+    alt: "Submersible pump control panel with motor protection",
   },
   {
-    image: contactorsImage,
+    image: ContactorsImage,
     title: "Air Break Contactors",
     subtitle: "Frequent-duty switching for motor and power circuits",
+    alt: "Industrial air break contactor for motor and power circuits",
   },
 ];
 
@@ -47,13 +51,12 @@ export default function Hero() {
 
       <div className="hero-shell editorial-hero">
         <div className="hero-copy-block reveal reveal-delay-1">
-          <h1>Electrical control and protection systems for industrial duty.</h1>
+          <h1>Built for Power. Designed for Control.</h1>
         </div>
 
         <div className="hero-side-block reveal reveal-delay-2">
           <p className="hero-subtitle">
-            Since 1975, Apex has manufactured switchgear and motor-control
-            equipment for reliable field performance.
+            Since 1975, Apex has engineered Motor Control and Safety Systems for consistent, Real-World performance across Industry, Agriculture, and Domestic applications.
           </p>
 
           <div className="hero-actions reveal reveal-delay-3">
@@ -75,7 +78,7 @@ export default function Hero() {
                 >
                   <img
                     src={slide.image.src || slide.image}
-                    alt={slide.title}
+                    alt={slide.alt}
                     className="hero-slide-image"
                   />
                   <div className="hero-slide-overlay">

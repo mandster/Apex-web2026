@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"d:\\\\projects\\\\apexWeb\" -Recurse -Exclude \"node_modules\" | Where-Object { $_.FullName -notmatch \"node_modules|\\\\.git\" } | Select-Object FullName | Sort-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\projects\\\\apexWeb\" | Where-Object { $_.Name -ne \"node_modules\" } | Format-Table Name, PSIsContainer)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ]
+  }
+}

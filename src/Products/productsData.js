@@ -16,7 +16,7 @@ const productsData = [
         name: 'Manual Star-Delta Starters',
         category: '1',
         image: msdImage,
-        description: 'A manual star-delta starter reduces motor starting current by starting in star connection and then switching to delta. The transition is operator-controlled.',
+        description: 'A manual Star-Delta starter reduces motor starting current by starting in star connection and then switching to delta. The transition is operator-controlled.',
       },
     // Add more products as needed
   ];
