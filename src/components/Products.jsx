@@ -3,7 +3,7 @@ import Link from "next/link";
 import startersImage from "../image/starters.jpg";
 import controlSwitchesImage from "../image/controlswitches.jpg";
 import submersibleImage from "../image/submersiblepanels.jpg";
-import ContactorsImage from "../image/Contactors.jpg";
+import ContactorsImage from "../image/contactors.jpg";
 import plugSocketsImage from "../image/plugsockets.jpg";
 import limitSwitchImage from "../image/panel accessories mcb.jpg";
 import accessoriesImage from "../image/accessories.jpg";

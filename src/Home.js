@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import startersImage from "./image/starters.jpg";
 import controlSwitchesImage from "./image/controlswitches.jpg";
 import submersibleImage from "./image/submersiblepanels.jpg";
-import ContactorsImage from "./image/Contactors.jpg";
+import ContactorsImage from "./image/contactors.jpg";
 
 const trustStats = [
   { label: "Years of Experience", value: 50, suffix: "+" },
