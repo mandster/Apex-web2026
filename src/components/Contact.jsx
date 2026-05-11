@@ -7,8 +7,8 @@ const Contact = () => {
       <section className="page-hero editorial-page-hero compact-hero">
         <div className="page-hero-grid">
           <div>
-            <p className="section-kicker">Contact</p>
-            <h1 className="page-title">Speak with Apex Engineering and Sales.</h1>
+            <p className="section-kicker"></p>
+            <h1 className="page-title">Contact us</h1>
           </div>
           <p className="page-summary">
             For product selection, dealership enquiries, and technical support,
